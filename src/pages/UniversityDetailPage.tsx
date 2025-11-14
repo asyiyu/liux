@@ -5,7 +5,6 @@ import { StarOutlined, BookOutlined, CalendarOutlined } from '@ant-design/icons'
 import './UniversityDetailPage.css';
 
 const { Title, Text, Paragraph } = Typography;
-const { TabPane } = Tabs;
 
 // 创建大学图片URL映射
 const universityImages: Record<string, string[]> = {
@@ -363,94 +362,113 @@ const UniversityDetailPage: React.FC = () => {
 
       <section className="content-section">
         <div className="container">
-          <Tabs activeKey={activeTab} onChange={handleTabChange} className="university-tabs" style={styles.universityTabs}>
-            <TabPane tab="院校简介" key="introduction">
-              <Card className="tab-content" style={styles.tabContent}>
-                <Paragraph className="university-description">
-                  {university.description}
-                </Paragraph>
-                <Divider />
-                <div className="facilities-section">
-                  <Title level={5}>校园设施</Title>
-                  <div className="facilities-list">
-                    {university.facilities.map((facility, index) => (
-                      <Tag key={index} color="blue">{facility}</Tag>
-                    ))}
-                  </div>
-                </div>
-                <Divider />
-                <div className="student-life-section">
-                  <Title level={5}>学生生活</Title>
-                  <Paragraph>{university.studentLife}</Paragraph>
-                </div>
-              </Card>
-            </TabPane>
-            
-            <TabPane tab="专业设置" key="majors">
-              <Card className="tab-content" style={styles.tabContent}>
-                <List
-                  dataSource={university.majors}
-                  renderItem={major => (
-                    <List.Item>
-                      <List.Item.Meta
-                        title={<span>{major.name} <Tag color="green">最低分数: {major.minScore}</Tag></span>}
-                        description={major.description}
-                      />
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </TabPane>
-            
-            <TabPane tab="录取要求" key="admission">
-              <Card className="tab-content" style={styles.tabContent}>
-                <Row gutter={[16, 16]}>
-                  <Col span={12}>
-                    <Title level={5}>本科录取要求</Title>
-                    <Paragraph><strong>GPA:</strong> {university.admissionRequirements.undergraduate.gpa}</Paragraph>
-                    <Paragraph><strong>SAT:</strong> {university.admissionRequirements.undergraduate.sat}</Paragraph>
-                    <Paragraph><strong>TOEFL:</strong> {university.admissionRequirements.undergraduate.toefl}</Paragraph>
-                    <Paragraph><strong>IELTS:</strong> {university.admissionRequirements.undergraduate.ielts}</Paragraph>
-                    <Title level={5}>申请材料:</Title>
+          <Tabs 
+            activeKey={activeTab} 
+            onChange={handleTabChange} 
+            className="university-tabs" 
+            style={styles.universityTabs}
+            items={[
+              {
+                key: 'introduction',
+                label: '院校简介',
+                children: (
+                  <Card className="tab-content" style={styles.tabContent}>
+                    <Paragraph className="university-description">
+                      {university.description}
+                    </Paragraph>
+                    <Divider />
+                    <div className="facilities-section">
+                      <Title level={5}>校园设施</Title>
+                      <div className="facilities-list">
+                        {university.facilities.map((facility, index) => (
+                          <Tag key={index} color="blue">{facility}</Tag>
+                        ))}
+                      </div>
+                    </div>
+                    <Divider />
+                    <div className="student-life-section">
+                      <Title level={5}>学生生活</Title>
+                      <Paragraph>{university.studentLife}</Paragraph>
+                    </div>
+                  </Card>
+                )
+              },
+              {
+                key: 'majors',
+                label: '专业设置',
+                children: (
+                  <Card className="tab-content" style={styles.tabContent}>
                     <List
-                      size="small"
-                      dataSource={university.admissionRequirements.undergraduate.requirements}
-                      renderItem={item => <List.Item>{item}</List.Item>}
+                      dataSource={university.majors}
+                      renderItem={major => (
+                        <List.Item>
+                          <List.Item.Meta
+                            title={<span>{major.name} <Tag color="green">最低分数: {major.minScore}</Tag></span>}
+                            description={major.description}
+                          />
+                        </List.Item>
+                      )}
                     />
-                  </Col>
-                  <Col span={12}>
-                    <Title level={5}>研究生录取要求</Title>
-                    <Paragraph><strong>GPA:</strong> {university.admissionRequirements.graduate.gpa}</Paragraph>
-                    <Paragraph><strong>GRE:</strong> {university.admissionRequirements.graduate.gre}</Paragraph>
-                    <Paragraph><strong>TOEFL:</strong> {university.admissionRequirements.graduate.toefl}</Paragraph>
-                    <Paragraph><strong>IELTS:</strong> {university.admissionRequirements.graduate.ielts}</Paragraph>
-                    <Title level={5}>申请材料:</Title>
-                    <List
-                      size="small"
-                      dataSource={university.admissionRequirements.graduate.requirements}
-                      renderItem={item => <List.Item>{item}</List.Item>}
-                    />
-                  </Col>
-                </Row>
-              </Card>
-            </TabPane>
-            
-            <TabPane tab="校园图片" key="gallery">
-              <Card className="tab-content" style={styles.tabContent}>
-                <Row gutter={[16, 16]}>
-                  {university.images.map((image, index) => (
-                    <Col span={12} key={index}>
-                      <img 
-                        src={image} 
-                        alt={`${university.name} 图片${index + 1}`} 
-                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                      />
-                    </Col>
-                  ))}
-                </Row>
-              </Card>
-            </TabPane>
-          </Tabs>
+                  </Card>
+                )
+              },
+              {
+                key: 'admission',
+                label: '录取要求',
+                children: (
+                  <Card className="tab-content" style={styles.tabContent}>
+                    <Row gutter={[16, 16]}>
+                      <Col span={12}>
+                        <Title level={5}>本科录取要求</Title>
+                        <Paragraph><strong>GPA:</strong> {university.admissionRequirements.undergraduate.gpa}</Paragraph>
+                        <Paragraph><strong>SAT:</strong> {university.admissionRequirements.undergraduate.sat}</Paragraph>
+                        <Paragraph><strong>TOEFL:</strong> {university.admissionRequirements.undergraduate.toefl}</Paragraph>
+                        <Paragraph><strong>IELTS:</strong> {university.admissionRequirements.undergraduate.ielts}</Paragraph>
+                        <Title level={5}>申请材料:</Title>
+                        <List
+                          size="small"
+                          dataSource={university.admissionRequirements.undergraduate.requirements}
+                          renderItem={item => <List.Item>{item}</List.Item>}
+                        />
+                      </Col>
+                      <Col span={12}>
+                        <Title level={5}>研究生录取要求</Title>
+                        <Paragraph><strong>GPA:</strong> {university.admissionRequirements.graduate.gpa}</Paragraph>
+                        <Paragraph><strong>GRE:</strong> {university.admissionRequirements.graduate.gre}</Paragraph>
+                        <Paragraph><strong>TOEFL:</strong> {university.admissionRequirements.graduate.toefl}</Paragraph>
+                        <Paragraph><strong>IELTS:</strong> {university.admissionRequirements.graduate.ielts}</Paragraph>
+                        <Title level={5}>申请材料:</Title>
+                        <List
+                          size="small"
+                          dataSource={university.admissionRequirements.graduate.requirements}
+                          renderItem={item => <List.Item>{item}</List.Item>}
+                        />
+                      </Col>
+                    </Row>
+                  </Card>
+                )
+              },
+              {
+                key: 'gallery',
+                label: '校园图片',
+                children: (
+                  <Card className="tab-content" style={styles.tabContent}>
+                    <Row gutter={[16, 16]}>
+                      {university.images.map((image, index) => (
+                        <Col span={12} key={index}>
+                          <img 
+                            src={image} 
+                            alt={`${university.name} 图片${index + 1}`} 
+                            style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  </Card>
+                )
+              }
+            ]}
+          />
         </div>
       </section>
 
@@ -492,7 +510,7 @@ const styles = {
   universityMainImage: {
     width: '100%',
     height: '100%',
-    objectFit: 'cover'
+    objectFit: 'cover' as const
   },
   imagePlaceholderText: {
     fontSize: '16px',

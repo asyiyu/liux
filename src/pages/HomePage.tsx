@@ -1,7 +1,7 @@
 // React导入已移除
 import { Link } from 'react-router-dom';
-import { Row, Col, Button, Typography, Space, Card, Tag, Divider } from 'antd';
-import { SearchOutlined, GlobalOutlined, UserOutlined, TrophyOutlined, DatabaseOutlined, BorderOutlined, FileTextOutlined, CalendarOutlined, EyeOutlined, HeartOutlined } from '@ant-design/icons';
+import { Row, Col, Button, Typography, Space, Card, Tag } from 'antd';
+import { GlobalOutlined, UserOutlined, TrophyOutlined, DatabaseOutlined, BorderOutlined, FileTextOutlined, CalendarOutlined, EyeOutlined, HeartOutlined } from '@ant-design/icons';
 import './HomePage.css';
 
 const { Title, Paragraph } = Typography
@@ -94,8 +94,8 @@ const HomePage = () => {
     }
   ]
 
-  const getCategoryColor = (category) => {
-    const colors = {
+  const getCategoryColor = (category: string) => {
+    const colors: { [key: string]: string } = {
       '申请指南': '#1890ff',
       '院校分析': '#52c41a',
       '语言考试': '#fa8c16',
@@ -237,8 +237,9 @@ const HomePage = () => {
                         src={article.image}
                         className="article-image"
                         onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = `https://picsum.photos/seed/article${article.id}/400/250.jpg`;
+                          const target = e.target as HTMLImageElement;
+                          target.onerror = null;
+                          target.src = `https://picsum.photos/seed/fallback${article.id}/400/250.jpg`;
                         }}
                       />
                       <div className="article-category-badge">
@@ -276,7 +277,7 @@ const HomePage = () => {
                         </Paragraph>
                         <div className="article-tags">
                           {article.tags.map((tag) => (
-                            <Tag key={tag} size="small" style={{ marginBottom: '4px' }}>
+                            <Tag key={tag} style={{ marginBottom: '4px' }}>
                               {tag}
                             </Tag>
                           ))}

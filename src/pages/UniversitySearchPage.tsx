@@ -7,8 +7,26 @@ import './UniversitySearchPage.css'
 const { Title, Text, Paragraph } = Typography
 const { Item } = Form
 
+// 定义大学接口
+interface University {
+  id: number
+  name: string
+  country: string
+  ranking: number | string
+  minScore: number
+  programs: string[]
+  image: string
+}
+
+// 定义扩展的大学接口（包含AI推荐属性）
+interface ExtendedUniversity extends University {
+  recommendationLevel?: string
+  recommendationColor?: string
+  scoreDiff?: number
+}
+
 // 模拟大学数据 - 包含不同分数层次的院校
-const mockUniversities = [
+const mockUniversities: University[] = [
   // 顶尖院校 (650+分)
   { id: 1, name: '哈佛大学', country: '美国', ranking: 1, minScore: 650, programs: ['本科', '硕士', '博士'], image: 'https://picsum.photos/id/177/400/300' },
   { id: 2, name: '牛津大学', country: '英国', ranking: 2, minScore: 640, programs: ['本科', '硕士', '博士'], image: 'https://picsum.photos/id/223/400/300' },
@@ -68,7 +86,7 @@ const mockUniversities = [
 
 const UniversitySearchPage: React.FC = () => {
   const [form] = Form.useForm()
-  const [searchResults, setSearchResults] = useState(mockUniversities)
+  const [searchResults, setSearchResults] = useState<ExtendedUniversity[]>(mockUniversities)
   const [gaokaoScore, setGaokaoScore] = useState('')
   const [languageScore, setLanguageScore] = useState('')
 
@@ -91,7 +109,9 @@ const UniversitySearchPage: React.FC = () => {
         
         // 如果分数差距相近，按排名排序
         if (Math.abs(aDiff - bDiff) <= 10) {
-          return a.ranking - b.ranking
+          const aRanking = typeof a.ranking === 'number' ? a.ranking : parseInt(a.ranking) || 999
+          const bRanking = typeof b.ranking === 'number' ? b.ranking : parseInt(b.ranking) || 999
+          return aRanking - bRanking
         }
         
         // 否则按匹配度排序（分数要求越接近实际分数越好）
@@ -123,7 +143,7 @@ const UniversitySearchPage: React.FC = () => {
           recommendationLevel,
           recommendationColor,
           scoreDiff: diff
-        }
+        } as ExtendedUniversity
       })
     }
     

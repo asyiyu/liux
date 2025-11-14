@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, Radio, DatePicker, Upload, Typography, Card, Row, Col, Modal } from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, Button, Select, Radio, Upload, Typography, Card, Row, Col, Modal } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import './ApplicationPage.css';
@@ -28,7 +28,6 @@ const majors = [
 const ApplicationPage: React.FC = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   // 表单提交处理
   const handleSubmit = async (values: any) => {
@@ -38,7 +37,6 @@ const ApplicationPage: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       console.log('提交的申请数据:', values);
-      setSubmitted(true);
       
       Modal.success({
         title: '申请提交成功',
