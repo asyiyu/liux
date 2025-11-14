@@ -1,0 +1,16 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="#f0f0f0"/>
+  
+  <!-- 麻省理工红色 --<rect x="70" y="80" width="260" height="140" fill="#8A1F38"/>
+  
+  <!-- 麻省理工标志 - 齿轮和书本 --<g transform="translate(200, 150) scale(0.7)">
+    <!-- 齿轮部分 --<circle cx="0" cy="0" r="40" fill="white"/>
+    <path d="M-40-40 L40-40 L40-20 L-40-20 Z M-40 40 L40 40 L40 20 L-40 20 Z M-40-40 L-20-40 L-20 40 L-40 40 Z M40-40 L20-40 L20 40 L40 40 Z" fill="#8A1F38"/>
+    <!-- 书本部分 --<path d="M-30 0 L30 0 L35 20 L-35 20 Z" fill="white" stroke="#8A1F38" stroke-width="2"/>
+    <line x1="-35" y1="10" x2="35" y2="10" stroke="#8A1F38" stroke-width="2"/>
+  </g>
+  
+  <!-- 文字标签 --<text x="200" y="260" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">麻省理工学院</text>
+  <text x="200" y="285" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">MIT</text>
+</svg>

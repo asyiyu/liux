@@ -1,0 +1,19 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="#f0f0f0"/>
+  
+  <!-- 哈佛红色 -->
+  <rect x="50" y="80" width="300" height="140" fill="#A51C30"/>
+  
+  <!-- 白色条纹 -->
+  <rect x="50" y="130" width="300" height="20" fill="white"/>
+  <rect x="50" y="170" width="300" height="20" fill="white"/>
+  
+  <!-- 哈佛标志 -->
+  <circle cx="200" cy="150" r="50" fill="white" stroke="#A51C30" stroke-width="3"/>
+  <text x="200" y="155" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#A51C30">哈佛</text>
+  
+  <!-- 文字标签 -->
+  <text x="200" y="250" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">哈佛大学</text>
+  <text x="200" y="275" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Harvard University</text>
+</svg>

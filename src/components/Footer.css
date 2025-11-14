@@ -1,0 +1,263 @@
+:root {
+  --footer-bg: #f8fafc;
+  --footer-text-primary: #1e293b;
+  --footer-text-secondary: #64748b;
+  --footer-border: #e2e8f0;
+  --footer-hover: var(--primary-color);
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4rem 0 2rem;
+  position: relative;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 品牌区域样式 */
+.footer-brand {
+  padding: 0;
+}
+
+.footer-brand:hover .footer-brand-logo {
+  transform: translateY(-5px);
+}
+
+.footer-brand p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* 社交媒体图标样式 */
+.footer-brand .ant-space-item:hover {
+  color: var(--footer-hover) !important;
+}
+
+/* 链接列表样式 */
+.footer-links, .footer-services {
+  padding: 0;
+}
+
+.footer-links ul, .footer-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links li, .footer-services li {
+  transition: all 0.3s ease;
+}
+
+.footer-links a, .footer-services a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-links a:hover, .footer-services a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+/* 联系信息样式 */
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-contact li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-contact-icon {
+  color: var(--primary-color);
+  margin-right: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.footer-contact-content {
+  flex: 1;
+}
+
+.footer-contact-title {
+  display: block;
+  color: var(--footer-text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-contact-text {
+  color: var(--footer-text-secondary);
+  line-height: 1.5;
+}
+
+/* 分隔线样式 */
+.footer .ant-divider {
+  margin: 3rem 0 2rem;
+  background-color: var(--footer-border);
+}
+
+/* 底部版权区域 */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.footer-bottom .ant-row {
+  align-items: center;
+}
+
+.footer-copyright {
+  color: var(--footer-text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-legal a {
+  color: var(--footer-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--footer-hover);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer .ant-row {
+    gap: 2rem;
+  }
+  
+  .footer-section {
+    padding: 0;
+  }
+  
+  .footer-contact li {
+    margin-bottom: 1.25rem;
+  }
+  
+  .footer .ant-divider {
+    margin: 2rem 0 1.5rem;
+  }
+  
+  .footer-bottom .ant-col:first-child {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2.5rem 0 1rem;
+  }
+  
+  .footer .container {
+    padding: 0 1rem;
+  }
+  
+  .footer-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .footer-links a, .footer-services a {
+    font-size: 0.9375rem;
+  }
+}
+
+/* 额外动画效果 */
+.footer-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 延迟动画以创建交错效果 */
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* 链接悬停效果增强 */
+.footer-links a, .footer-services a, .footer-legal a {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-links a:after, .footer-services a:after, .footer-legal a:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--footer-hover);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover:after, .footer-services a:hover:after, .footer-legal a:hover:after {
+  width: 100%;
+}
+
+/* 标题样式优化 */
+.footer-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.5rem;
+}
+
+.footer-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}

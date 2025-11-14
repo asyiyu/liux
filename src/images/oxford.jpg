@@ -1,0 +1,14 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="#f0f0f0"/>
+  
+  <!-- 牛津蓝色背景 --<rect x="60" y="70" width="280" height="160" fill="#0A2240"/>
+  
+  <!-- 白色十字 --<path d="M190 70V230M60 150H340" stroke="white" stroke-width="40"/>
+  <path d="M210 70V230M60 170H340" stroke="white" stroke-width="20"/>
+  
+  <!-- 金色装饰边框 --<path d="M50 60H350V240H50Z" fill="none" stroke="#D4AF37" stroke-width="10"/>
+  
+  <!-- 文字标签 --<text x="200" y="260" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">牛津大学</text>
+  <text x="200" y="285" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">University of Oxford</text>
+</svg>

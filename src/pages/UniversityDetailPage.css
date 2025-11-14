@@ -1,0 +1,187 @@
+.university-detail-page {
+  padding: 40px 0;
+}
+
+.header-section {
+  background-color: #f5f7fa;
+  padding: 60px 0;
+  margin-bottom: 40px;
+}
+
+.university-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.university-info {
+  flex: 1;
+}
+
+.ranking-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff3cd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  inline-size: fit-content;
+  margin-bottom: 16px;
+}
+
+.university-name {
+  margin-bottom: 16px;
+  color: #001529;
+}
+
+.location-info,
+.founded-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.university-image-placeholder {
+  width: 300px;
+  height: 200px;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #666;
+  border-radius: 8px;
+}
+
+.content-section {
+  margin-bottom: 40px;
+}
+
+.university-tabs {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tab-content {
+  border: none;
+  box-shadow: none;
+}
+
+.university-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.facilities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.major-score {
+  color: #0066cc;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.requirements-section {
+  padding: 20px 0;
+}
+
+.requirement-item {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.campus-images {
+  padding: 20px 0;
+}
+
+.campus-image-placeholder {
+  height: 200px;
+  background-color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #666;
+  border-radius: 8px;
+}
+
+.cta-section {
+  margin-top: 60px;
+}
+
+.cta-card {
+  background-color: #f0f8ff;
+  border-color: #91d5ff;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .university-header {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .university-image-placeholder {
+    width: 100%;
+    height: 240px;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section {
+    padding: 40px 0;
+  }
+  
+  .university-detail-page {
+    padding: 20px 0;
+  }
+}
+
+/* 修复Tabs样式 */
+.ant-tabs-tab {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #0066cc;
+  height: 3px;
+}
+
+.ant-list-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-list-item:last-child {
+  border-bottom: none;
+}

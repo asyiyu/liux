@@ -1,0 +1,344 @@
+.university-search-page {
+  padding: 40px 0;
+}
+
+.search-section {
+  margin-bottom: 40px;
+}
+
+/* AI智能选校系统样式 */
+.ai-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ai-title {
+  color: var(--primary-color);
+  margin-bottom: 16px !important;
+  font-size: 2.5rem !important;
+  font-weight: 700;
+}
+
+.ai-description {
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.ai-search-card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.ai-search-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 8px 24px rgba(24, 144, 255, 0.15);
+}
+
+.score-input-section {
+  padding: 24px 0;
+}
+
+.ai-search-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.ai-search-btn {
+  background: linear-gradient(135deg, #1890ff, #096dd9);
+  border: none;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ai-search-btn:hover {
+  background: linear-gradient(135deg, #40a9ff, #1890ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(24, 144, 255, 0.4);
+}
+
+.results-section {
+  padding: 40px 0;
+}
+
+/* 统计区域样式 */
+.statistics-section {
+  padding: 40px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  margin: 40px 0;
+}
+
+.statistics-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.statistics-header h3 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.stat-card {
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card.high-score:hover {
+  border-color: #ff4d4f;
+}
+
+.stat-card.medium-high:hover {
+  border-color: #faad14;
+}
+
+.stat-card.medium:hover {
+  border-color: #1890ff;
+}
+
+.stat-card.low:hover {
+  border-color: #52c41a;
+}
+
+.stat-card .ant-statistic-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stat-card .ant-statistic-content {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 24px 0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.results-header h3 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.university-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: all var(--transition-normal);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.university-card.ai-recommended {
+  border: 2px solid #e6f7ff;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+}
+
+.university-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.university-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.ai-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #1890ff, #096dd9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+  z-index: 2;
+}
+
+.recommendation-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.university-image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  border-radius: var(--radius-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 确保图片始终显示 */
+.university-image[src] {
+  min-height: 200px;
+}
+
+.university-card:hover .university-image {
+  transform: scale(1.05);
+}
+
+.university-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+  border-color: #1890ff;
+}
+
+.university-card.ai-recommended:hover {
+  border-color: #1890ff;
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+}
+
+.university-ranking {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.university-name {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.university-info {
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.university-card .ant-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.university-card .ant-btn {
+  margin-top: auto;
+  background: linear-gradient(135deg, #1890ff, #096dd9);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.university-card .ant-btn:hover {
+  background: linear-gradient(135deg, #40a9ff, #1890ff);
+  transform: translateY(-1px);
+}
+
+.no-results {
+  text-align: center;
+  padding: 80px 0;
+  color: #666;
+}
+
+.no-results h4 {
+  color: #999;
+  margin-bottom: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .university-search-page {
+    padding: 20px 0;
+  }
+  
+  .ai-title {
+    font-size: 2rem !important;
+  }
+  
+  .ai-description {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  
+  .ai-search-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ai-search-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .results-header {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .university-card {
+    margin: 0 -16px;
+    border-radius: 0;
+  }
+  
+  .ai-badge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  
+  .university-image-container {
+    height: 160px;
+  }
+  
+  .university-image {
+    height: 160px;
+  }
+}

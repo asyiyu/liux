@@ -1,0 +1,6 @@
+@echo off
+ECHO 开始安装依赖...
+"E:\Program Files\nodejs\npm" install
+ECHO 安装完成，检查node_modules...
+dir node_modules /b | findstr /r "react"
+ECHO 执行完成！
